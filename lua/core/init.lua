@@ -5,6 +5,7 @@ function M.load()
     require("core.keymaps")
     require("core.plugins")
     require("core.dashboard").setup()
+    require("core.colorscheme").setup()
 end
 
 return M
