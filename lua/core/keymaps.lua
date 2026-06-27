@@ -8,7 +8,10 @@ map("n", "<C-s>", ":w<CR>", { desc = "Save" })
 map("n", "<C-q>", ":q<CR>", { desc = "Quit" })
 
 -- Window navigation
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
+map("n", "<C-l>", "<C-w>h")
+map("n", "<C-b>", "<C-w>j")
+map("n", "<C-u>", "<C-w>k")
+map("n", "<C-r>", "<C-w>l")
+
+map("n", "ch", ":split<CR>", { desc = "Horizontal Split" })
+map("n", "cv", ":vsplit<CR>", { desc = "Vertical Split" })
