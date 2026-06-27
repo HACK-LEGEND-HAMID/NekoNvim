@@ -7,7 +7,7 @@ function M.setup()
         return
     end
 
-    -- Load your colorscheme
+    -- Load colorscheme
     local colors = require("core.colorscheme").colors
 
     math.randomseed(os.time() * os.clock())
@@ -21,12 +21,12 @@ function M.setup()
         header = table.concat(cat_lines, "\n"),
 
         items = {
-            { name = "󰱼  Find File",     action = "Telescope find_files",        section = "Navigate" },
-            { name = "󰈔  New File",      action = "ene | startinsert",           section = "Navigate" },
-            { name = "󰋚  Recent Files",  action = "Telescope oldfiles",          section = "Navigate" },
-            { name = "󱓞  Search Text",   action = "Telescope live_grep",         section = "Navigate" },
-            { name = "󰒓  Config",        action = "e ~/.config/nvim/init.lua",   section = "Setup" },
-            { name = "󰩈  Quit",          action = "qa",                          section = "Setup" },
+            { name = "🌙 Find File",     action = "Telescope find_files",        section = "Navigate" },
+            { name = "🌙 New File",      action = "ene | startinsert",           section = "Navigate" },
+            { name = "🌙 Recent Files",  action = "Telescope oldfiles",          section = "Navigate" },
+            { name = "🌙 Search Text",   action = "Telescope live_grep",         section = "Navigate" },
+            { name = "🌙 Config",        action = "e ~/.config/nvim/init.lua",   section = "Setup" },
+            { name = "🌙 Quit",          action = "qa",                          section = "Setup" },
         },
 
         footer = "🐱 Trust no one, not even yourself Happy Hacking 🔴\n",
@@ -35,7 +35,7 @@ function M.setup()
             starter.gen_hook.adding_bullet("  ", false),
             starter.gen_hook.indexing("all", { "1", "2", "3", "4", "5", "6" }),
             starter.gen_hook.aligning("center", "center"),
-            starter.gen_hook.padding(3, 2),
+            starter.gen_hook.padding(3),
         },
     })
 
@@ -47,5 +47,6 @@ function M.setup()
     vim.cmd(("highlight MiniStarterFooter guifg=%s gui=italic"):format(colors.footer))
     vim.cmd(("highlight MiniStarterQuery guifg=%s gui=bold"):format(colors.number))
 end
+
 
 return M
