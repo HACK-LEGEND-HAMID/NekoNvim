@@ -6,6 +6,7 @@ function M.load()
     require("core.plugins")
     require("core.dashboard").setup()
     require("core.colorscheme").setup()
+    require("core.autocmds")
 end
 
 return M
