@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 
 -- Save
 map("n", "<C-s>", ":w<CR>", { desc = "Save" })
+map({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { silent = true })
 
 -- Quit
 map("n", "<C-q>", ":q<CR>", { desc = "Quit" })
