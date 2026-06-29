@@ -7,22 +7,18 @@ function M.setup()
         return
     end
 
-    -- Load colorscheme
     local colors = require("core.colorscheme").colors
-
     math.randomseed(os.time() * os.clock())
-
     local art = require("core.dashboard.art")
     local cat_lines = art.get_random()
 
     starter.setup({
         autoopen = true,
-
         header = table.concat(cat_lines, "\n"),
 
         items = {
             { name = "🌙 Find File",     action = "Telescope find_files",        section = "Navigate" },
-            { name = "🌙 New File",      action = "ene | startinsert",           section = "Navigate" },
+            { name = "🌙 New File",      action = "enew | startinsert",          section = "Navigate" },
             { name = "🌙 Recent Files",  action = "Telescope oldfiles",          section = "Navigate" },
             { name = "🌙 Search Text",   action = "Telescope live_grep",         section = "Navigate" },
             { name = "🌙 Config",        action = "e ~/.config/nvim/init.lua",   section = "Setup" },
@@ -39,7 +35,6 @@ function M.setup()
         },
     })
 
-    -- Apply colors from colorscheme
     vim.cmd(("highlight MiniStarterHeader guifg=%s gui=bold,italic"):format(colors.header))
     vim.cmd(("highlight MiniStarterSection guifg=%s gui=bold"):format(colors.shortcut))
     vim.cmd(("highlight MiniStarterItem guifg=%s gui=bold"):format(colors.button))
@@ -47,6 +42,5 @@ function M.setup()
     vim.cmd(("highlight MiniStarterFooter guifg=%s gui=italic"):format(colors.footer))
     vim.cmd(("highlight MiniStarterQuery guifg=%s gui=bold"):format(colors.number))
 end
-
 
 return M
