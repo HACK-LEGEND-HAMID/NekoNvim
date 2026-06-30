@@ -1,1 +1,52 @@
-return {}
+return {
+    {
+        "CRAG666/code_runner.nvim",
+        keys = {
+            { "<leader>r", "<cmd>RunCode<CR>", desc = "Run Code" },
+        },
+        config = function()
+            require("code_runner").setup({
+                mode = "float",
+                float = {
+                    border = "rounded",
+                    width = 0.8,
+                    height = 0.6,
+                },
+                filetype = {
+                    c = "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
+                    cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
+                    rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
+                    python = "python3 -u $fileName",
+                    lua = "lua $fileName",
+                    sh = "bash $fileName",
+                    bash = "bash $fileName",
+                    zsh = "zsh $fileName",
+                    go = "go run $fileName",
+                    java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
+                    javascript = "node $fileName",
+                    typescript = "ts-node $fileName",
+                    html = "open $fileName",
+                    ruby = "ruby $fileName",
+                    php = "php $fileName",
+                    perl = "perl $fileName",
+                    r = "Rscript $fileName",
+                    dart = "dart $fileName",
+                    swift = "swift $fileName",
+                    kotlin = "kotlinc $fileName -include-runtime -d $fileNameWithoutExt.jar && java -jar $fileNameWithoutExt.jar",
+                    haskell = "runhaskell $fileName",
+                    julia = "julia $fileName",
+                    elixir = "elixir $fileName",
+                    clojure = "clojure $fileName",
+                    lisp = "sbcl --script $fileName",
+                    fortran = "gfortran $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
+                    pascal = "fpc $fileName && $dir/$fileNameWithoutExt",
+                    nim = "nim c -r $fileName",
+                    zig = "zig run $fileName",
+                    crystal = "crystal $fileName",
+                    scala = "scala $fileName",
+                    groovy = "groovy $fileName",
+                },
+            })
+        end,
+    },
+}
