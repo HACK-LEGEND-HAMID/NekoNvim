@@ -16,3 +16,4 @@ map("n", "<C-r>", "<C-w>l")
 
 map("n", "ch", ":split<CR>", { desc = "Horizontal Split" })
 map("n", "cv", ":vsplit<CR>", { desc = "Vertical Split" })
+

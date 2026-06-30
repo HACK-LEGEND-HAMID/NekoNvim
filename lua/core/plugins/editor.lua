@@ -32,5 +32,19 @@ return {
         },
         config = true,
     },
+    -- leap
+{
+    url = "https://codeberg.org/andyg/leap.nvim",
+    keys = {
+        { "s", mode = { "n", "x", "o" }, desc = "Leap forward" },
+        { "S", mode = { "n", "x", "o" }, desc = "Leap backward" },
+    },
+    config = function()
+        -- Only set s/S, don't touch p/P
+        vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
+        vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
+    end,
+},
 
 }
+
