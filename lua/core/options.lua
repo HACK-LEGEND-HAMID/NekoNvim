@@ -18,3 +18,6 @@ opt.wrap = false
 -- Search
 opt.ignorecase = true
 opt.smartcase = true
+
+-- default snippet off
+vim.g.loaded_nvim_snippet = false
