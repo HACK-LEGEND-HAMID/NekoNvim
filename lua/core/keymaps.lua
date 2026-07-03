@@ -54,3 +54,63 @@ vim.keymap.set({ "i", "s" }, "<C-e>", function()
         ls.expand_or_jump()
     end
 end, { silent = true })
+
+
+-- 🎵 Music Player
+map("n", "<leader>mp", function()
+    pcall(function()
+        require("core.music").play(vim.fn.input("🎵 Song/URL: "))
+    end)
+end, { desc = "Play Music" })
+
+map("n", "<leader>ms", function()
+    pcall(function()
+        require("core.music").stop()
+    end)
+end, { desc = "Stop Music" })
+
+map("n", "<leader>mP", function()
+    pcall(function()
+        require("core.music").pause()
+    end)
+end, { desc = "Pause Music" })
+
+map("n", "<leader>mr", function()
+    pcall(function()
+        require("core.music").resume()
+    end)
+end, { desc = "Resume Music" })
+
+map("n", "<leader>my", function()
+    pcall(function()
+        require("core.music.stream").youtube(vim.fn.input("🔍 YouTube: "))
+    end)
+end, { desc = "YouTube Search" })
+
+map("n", "<leader>mu", function()
+    pcall(function()
+        require("core.music.stream").play_url(vim.fn.input("🔗 URL: "))
+    end)
+end, { desc = "Play URL" })
+
+
+-- Git
+map("n", "]c", ":Gitsigns next_hunk<CR>", { desc = "Next hunk" })
+map("n", "[c", ":Gitsigns prev_hunk<CR>", { desc = "Previous hunk" })
+map("n", "<leader>gb", ":Gitsigns blame_line<CR>", { desc = "Blame line" })
+map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
+map("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
+
+
+-- AI Codeium
+map("i", "<C-g>", function()
+    return vim.fn["codeium#Accept"]()
+end, { expr = true, silent = true, desc = "Accept AI" })
+
+map("i", "<C-;>", function()
+    return vim.fn["codeium#CycleCompletions"](1)
+end, { expr = true, silent = true, desc = "Next suggestion" })
+
+map("i", "<C-'>", function()
+    return vim.fn["codeium#Clear"]()
+end, { expr = true, silent = true, desc = "Clear AI" })

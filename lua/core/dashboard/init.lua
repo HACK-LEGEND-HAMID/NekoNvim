@@ -25,7 +25,7 @@ function M.setup()
             { name = "🌙 Quit",          action = "qa",                          section = "Setup" },
         },
 
-        footer = "🐱 Trust no one, not even yourself Happy Hacking 🔴\n",
+        footer = footer = "🐱 With great power comes great responsibility \n",
 
         content_hooks = {
             starter.gen_hook.adding_bullet("  ", false),

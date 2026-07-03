@@ -1,1 +1,6 @@
-return {}
+return {
+    {
+        "Exafunction/codeium.vim",
+        event = "BufEnter",
+    },
+}
