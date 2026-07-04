@@ -70,11 +70,6 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-        keys = {
-            { "<leader>ff", ":Telescope find_files<CR>", desc = "Find files" },
-            { "<leader>fg", ":Telescope live_grep<CR>", desc = "Find text" },
-            { "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers" },
-        },
         config = function()
             require("telescope").setup({})
         end,
