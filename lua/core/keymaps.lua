@@ -102,15 +102,3 @@ map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
 map("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
 
 
--- AI Codeium
-map("i", "<C-g>", function()
-    return vim.fn["codeium#Accept"]()
-end, { expr = true, silent = true, desc = "Accept AI" })
-
-map("i", "<C-;>", function()
-    return vim.fn["codeium#CycleCompletions"](1)
-end, { expr = true, silent = true, desc = "Next suggestion" })
-
-map("i", "<C-'>", function()
-    return vim.fn["codeium#Clear"]()
-end, { expr = true, silent = true, desc = "Clear AI" })

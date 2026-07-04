@@ -17,13 +17,13 @@ function M.setup()
         header = table.concat(cat_lines, "\n"),
 
         items = {
-            { name = "🌙 Find File",     action = "Telescope find_files",        section = "Navigate" },
-            { name = "🌙 New File",      action = "enew | startinsert",          section = "Navigate" },
-            { name = "🌙 Recent Files",  action = "Telescope oldfiles",          section = "Navigate" },
-            { name = "🌙 Search Text",   action = "Telescope live_grep",         section = "Navigate" },
-            { name = "🌙 Config",        action = "e ~/.config/nvim/init.lua",   section = "Setup" },
-            { name = "🌙 Quit",          action = "qa",                          section = "Setup" },
-        },
+    { name = "🌙 Find File",     action = "lua require('telescope.builtin').find_files()", section = "Navigate" },
+    { name = "🌙 New File",      action = "enew | startinsert", section = "Navigate" },
+    { name = "🌙 Recent Files",  action = "lua require('telescope.builtin').oldfiles()", section = "Navigate" },
+    { name = "🌙 Search Text",   action = "lua require('telescope.builtin').live_grep()", section = "Navigate" },
+    { name = "🌙 Config",        action = "e ~/.config/nvim/init.lua", section = "Setup" },
+    { name = "🌙 Quit",          action = "qa", section = "Setup" },
+},
 
         footer = "🐱 With great power comes great responsibility \n",
 
