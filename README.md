@@ -152,7 +152,7 @@ sudo apt update
 
 sudo apt install neovim git ripgrep python3 mpv yt-dlp
 
-git clone https://github.com/YOUR_USERNAME/nekonvim.git ~/.config/nvim
+git clone https://github.com/HACK-LEGEND-HAMID/NekoNvim.git ~/.config/nvim
 
 nvim
 ```
@@ -162,7 +162,7 @@ nvim
 ```bash
 sudo dnf install neovim git ripgrep python3 mpv yt-dlp
 
-git clone https://github.com/YOUR_USERNAME/nekonvim.git ~/.config/nvim
+git clone https://github.com/HACK-LEGEND-HAMID/NekoNvim.git ~/.config/nvim
 
 nvim
 ```
@@ -172,7 +172,7 @@ nvim
 ```bash
 sudo pacman -S neovim git ripgrep python mpv yt-dlp
 
-git clone https://github.com/YOUR_USERNAME/nekonvim.git ~/.config/nvim
+git clone https://github.com/HACK-LEGEND-HAMID/NekoNvim.git ~/.config/nvim
 
 nvim
 ```
@@ -182,7 +182,7 @@ nvim
 ```bash
 brew install neovim git ripgrep python3 mpv yt-dlp
 
-git clone https://github.com/YOUR_USERNAME/nekonvim.git ~/.config/nvim
+git clone https://github.com/HACK-LEGEND-HAMID/NekoNvim.git ~/.config/nvim
 
 nvim
 ```
@@ -194,7 +194,7 @@ pkg update
 
 pkg install neovim git ripgrep python mpv yt-dlp
 
-git clone https://github.com/YOUR_USERNAME/nekonvim.git ~/.config/nvim
+git clone https://github.com/HACK-LEGEND-HAMID/NekoNvim.git ~/.config/nvim
 
 nvim
 ```
@@ -204,7 +204,7 @@ nvim
 ```powershell
 winget install Neovim.Neovim Git.Git
 
-git clone https://github.com/YOUR_USERNAME/nekonvim.git $HOME\AppData\Local\nvim
+git clone https://github.com/HACK-LEGEND-HAMID/NekoNvim.git $HOME\AppData\Local\nvim
 
 nvim
 ```
