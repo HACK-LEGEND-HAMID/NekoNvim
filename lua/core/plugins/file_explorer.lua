@@ -68,10 +68,11 @@ return {
     },
 
     {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("telescope").setup({})
-        end,
-    },
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
+    config = function()
+        require("telescope").setup({})
+    end,
+},
 }
