@@ -102,3 +102,8 @@ map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
 map("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
 
 
+-- Telescope
+map("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find files" })
+map("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Find text" })
+map("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Buffers" })
+map("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Help tags" })
