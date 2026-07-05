@@ -46,7 +46,7 @@ autocmd("VimResized", {
     group = group,
     pattern = "*",
     command = "wincmd =",
-})   
+})
 
 -- 2-space indentation
 autocmd("FileType", {
@@ -145,11 +145,23 @@ autocmd("CompleteDone", {
     end,
 })
 
--- Auto-format on save 
+-- Auto-format on save
 autocmd("BufWritePre", {
     group = group,
     pattern = { "*.lua", "*.py", "*.js", "*.ts", "*.jsx", "*.tsx", "*.html", "*.css", "*.json", "*.yaml", "*.c", "*.cpp", "*.java", "*.go", "*.rs" },
     callback = function()
         vim.lsp.buf.format({ async = false })
+    end,
+})
+
+-- Auto-change directory to current file's folder
+autocmd("BufEnter", {
+    group = group,
+    pattern = "*",
+    callback = function()
+        local bufname = vim.api.nvim_buf_get_name(0)
+        if bufname ~= "" then
+            vim.cmd("silent! lcd " .. vim.fn.fnamemodify(bufname, ":h"))
+        end
     end,
 })
