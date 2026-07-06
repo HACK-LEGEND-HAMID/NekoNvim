@@ -1,4 +1,5 @@
 <p align="center">
+  <img src="https://img.shields.io/badge/Security-Audited-success?style=for-the-badge" alt="Security Audited">
   <img src="https://img.shields.io/badge/Neovim-IDE-blue?logo=neovim&style=for-the-badge" alt="Neovim IDE">
   <img src="https://img.shields.io/badge/Lua-100%25-blue?logo=lua&style=for-the-badge" alt="Lua">
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -208,6 +209,40 @@ git clone https://github.com/HACK-LEGEND-HAMID/NekoNvim.git $HOME\AppData\Local\
 
 nvim
 ```
+
+---
+
+# 🔒 Security Audit
+
+NekoNvim has been analyzed using **Aikido Security Code Audit** to help identify potential security issues.
+
+## Audit Summary
+
+| Status | Result |
+|--------|--------|
+| Scan Status | ✅ Completed |
+| Open Issues | ✅ 0 |
+| Solved Issues | ✅ 1 |
+| High Severity Issues | ✅ Fixed |
+
+The reported issue was resolved and the latest audit shows **no remaining open security issues**.
+
+## Audit Screenshots
+
+<p align="center">
+  <img src="screenshots/Screenshot From 2026-07-06 14-25-18.png" width="800" alt="Security Audit Overview">
+</p>
+
+<p align="center">
+  <img src="screenshots/Screenshot From 2026-07-06 14-26-09.png" width="400" alt="Audit Issues">
+  <img src="screenshots/Screenshot From 2026-07-06 14-26-29.png" width="400" alt="Clean Report">
+</p>
+
+> **Note**
+>
+> An earlier audit detected one **High Severity Remote Code Execution (RCE)** issue in `lua/core/autocmds.lua`.
+> The issue has since been fixed, and the latest audit reports **0 open security issues**.
+
 
 ---
 
