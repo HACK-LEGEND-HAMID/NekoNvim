@@ -155,6 +155,8 @@ autocmd("BufWritePre", {
 })
 
 -- Auto-change directory to current file's folder
+-- Security: Uses vim.api.nvim_set_current_dir() instead of vim.cmd("lcd " .. dir)
+-- to prevent command injection via directory names containing Ex metacharacters (e.g., |)
 autocmd("BufEnter", {
     group = group,
     pattern = "*",
@@ -166,9 +168,13 @@ autocmd("BufEnter", {
                 dir = "."
             end
             if vim.fn.isdirectory(dir) == 1 then
-                vim.api.nvim_set_current_dir(dir)
+                -- Use pcall to safely handle any errors during directory change
+                local ok, err = pcall(vim.api.nvim_set_current_dir, dir)
+                if not ok then
+                    -- Silently fail if directory change fails (e.g., permission denied)
+                    -- This prevents error messages from disrupting the user experience
+                end
             end
-
         end
     end,
 })
