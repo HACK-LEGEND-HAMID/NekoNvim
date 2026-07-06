@@ -161,7 +161,14 @@ autocmd("BufEnter", {
     callback = function()
         local bufname = vim.api.nvim_buf_get_name(0)
         if bufname ~= "" then
-            vim.cmd("silent! lcd " .. vim.fn.fnamemodify(bufname, ":h"))
+            local dir = vim.fn.fnamemodify(bufname, ":h")
+            if dir == "" then
+                dir = "."
+            end
+            if vim.fn.isdirectory(dir) == 1 then
+                vim.api.nvim_set_current_dir(dir)
+            end
+
         end
     end,
 })
